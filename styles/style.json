@@ -1,0 +1,58 @@
+{
+  "version": 8,
+  "sources": {
+    "pale": {
+      "type": "raster",
+      "tiles": ["https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png"],
+      "minzoom": 2,
+      "maxzoom": 18,
+      "attribution": "<a href=\"https://maps.gsi.go.jp/development/ichiran.html#pale\" target=\"_blank\">地理院タイル</a>"
+    },
+    "apcp": {
+      "type": "raster-dem",
+      "url": "pmtiles:///precipitation-map/data/apcp_terrainrgb.pmtiles",
+      "minzoom": 0,
+      "maxzoom": 4,
+      "attribution": "<a href=\"https://registry.opendata.aws/noaa-gfs-bdp-pds/\" target=\"_blank\">NOAA GFS</a>"
+    }
+  },
+  "glyphs": "font/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "pale",
+      "source": "pale",
+      "type": "raster"
+    },
+    {
+      "id": "apcp",
+      "type": "color-relief",
+      "source": "apcp",
+      "paint": {
+        "color-relief-color": [
+          "interpolate",
+          ["linear"],
+          ["elevation"],
+          0,
+          "rgba(0,0,0,0)",
+          1,
+          "#bdeffa",
+          5,
+          "#66c2ff",
+          10,
+          "#3399ff",
+          20,
+          "#0066ff",
+          30,
+          "#0044cc",
+          50,
+          "#002299",
+          80,
+          "#6600cc",
+          100,
+          "#ff00ff"
+        ],
+        "color-relief-opacity": 0.8
+      }
+    }
+  ]
+}
