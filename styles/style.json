@@ -8,9 +8,9 @@
       "maxzoom": 18,
       "attribution": "<a href=\"https://maps.gsi.go.jp/development/ichiran.html#pale\" target=\"_blank\">地理院タイル</a>"
     },
-    "apcp": {
+    "prate": {
       "type": "raster-dem",
-      "url": "pmtiles:///precipitation-map/data/apcp_terrainrgb.pmtiles",
+      "url": "pmtiles:///precipitation-map/data/prate_terrainrgb.pmtiles",
       "minzoom": 0,
       "maxzoom": 4,
       "attribution": "<a href=\"https://registry.opendata.aws/noaa-gfs-bdp-pds/\" target=\"_blank\">NOAA GFS</a>"
@@ -24,9 +24,9 @@
       "type": "raster"
     },
     {
-      "id": "apcp",
+      "id": "prate",
       "type": "color-relief",
-      "source": "apcp",
+      "source": "prate",
       "paint": {
         "color-relief-color": [
           "interpolate",
